@@ -1,0 +1,66 @@
+<main class="lecteur">
+
+    <header>
+        <div class="logo">
+            <img src="images/nuage.png" alt="logo">
+        </div>
+
+        <input v-model="recherche" type="search" id="recherche" placeholder="recherche">
+
+    </header>
+
+    <div class="tag_section">
+
+        <div class="container_tag" v-for="tag in tags">
+            <div @click="selectTags(tag)" :class="{active:tag == recherche}" class="tag">{{ tag }}</div>
+        </div>
+
+    </div>
+
+    <div class="liste">
+        <div class="chansons" v-for="chanson in chansons.filter(filtrer)">
+
+            <img @click="playMusic(chanson);afficheImage(chanson);afficheTitre(chanson);definirTemps(chanson);afficherTags(chanson)"
+                :src="'images/' + chanson.image" alt="image">
+
+            <p class="titre">
+                {{ chanson.titre }}
+            </p>
+            <p class="artiste">
+                {{ chanson.artiste }}
+            </p>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <div :class="{evolution:playing == true}">
+
+            <p v-if="playing == true" class="titre_play"> {{ titre_affiche }}
+            <p class="temps_actuel"> {{ minutesTemps }}:{{ secondsTemps }}</p>
+            </p>
+
+            <input id="progression" v-if="playing == true" @input="avanceRecule()" v-model="progression_temps"
+                type="range" min="0" :max="temps" step="0.1">
+
+            <p v-if="playing == true" class="temps"> 0{{ minutes }}:{{ seconds }} </p>
+            <img :src="image_affiche" class="image_affiche" alt="">
+
+
+            <input id="controle_volume" v-if="playing == true" @input="changeVolume()" v-model="volume_data"
+                type="range" min="0" max="1" step="0.02">
+
+
+            <label id="volume1" v-if="playing == true" for="volume1" step="1">volume {{ volume_data*100}}%</label>
+
+            <img v-if="playing == true" class="btn" src="images/plau-pause.png" alt="" @click="toggle()">
+
+        </div>
+
+
+
+    </footer>
+
+</main>

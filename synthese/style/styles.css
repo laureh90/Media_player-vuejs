@@ -1,0 +1,389 @@
+@charset "UTF-8";
+/** salut !!! Mon css n'est pas encore à mon gout mais le nécéssaire est là héhé**/
+body {
+  background-image: url(../images/nuage-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0px auto;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+main {
+  background-color: rgba(112, 112, 112, 0.308);
+  width: 80%;
+  margin: 0px auto;
+  /* page accueil*/
+  /* page affichage lecteur */
+}
+
+main.acceuil {
+  width: 500px;
+  height: 400px;
+  margin-top: 100px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 40px 40px;
+  -webkit-box-shadow: 10px 5px 20px rgba(251, 251, 251, 0.733);
+          box-shadow: 10px 5px 20px rgba(251, 251, 251, 0.733);
+}
+
+main.acceuil h1 {
+  text-align: center;
+  color: whitesmoke;
+}
+
+main.acceuil .conteneur {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@-webkit-keyframes cresent {
+  0% {
+    -webkit-transform: translate(-30px, 30px) scale(0.9);
+            transform: translate(-30px, 30px) scale(0.9);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  50% {
+    -webkit-transform: translate(0px, 0px) scale(1.02);
+            transform: translate(0px, 0px) scale(1.02);
+    -webkit-box-shadow: 0 0 10px white, 0 0 80px 8px #f1c5d8;
+            box-shadow: 0 0 10px white, 0 0 80px 8px #f1c5d8;
+    background-color: #efdbd8;
+  }
+  100% {
+    -webkit-transform: translate(30px, -30px) scale(0.9);
+            transform: translate(30px, -30px) scale(0.9);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+@keyframes cresent {
+  0% {
+    -webkit-transform: translate(-30px, 30px) scale(0.9);
+            transform: translate(-30px, 30px) scale(0.9);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  50% {
+    -webkit-transform: translate(0px, 0px) scale(1.02);
+            transform: translate(0px, 0px) scale(1.02);
+    -webkit-box-shadow: 0 0 10px white, 0 0 80px 8px #f1c5d8;
+            box-shadow: 0 0 10px white, 0 0 80px 8px #f1c5d8;
+    background-color: #efdbd8;
+  }
+  100% {
+    -webkit-transform: translate(30px, -30px) scale(0.9);
+            transform: translate(30px, -30px) scale(0.9);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+main.acceuil .conteneur .moon {
+  background-image: url(../images/nuage-2.jpg);
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  position: relative;
+}
+
+main.acceuil .conteneur .moon::before {
+  content: '';
+  background-color: #f1c5d8;
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  -webkit-animation: 3.2s cresent linear infinite alternate;
+          animation: 3.2s cresent linear infinite alternate;
+}
+
+main.acceuil .conteneur .moon .play {
+  position: absolute;
+  top: 47%;
+  left: 55%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 30px solid  #f1c5d8;
+}
+
+main.lecteur {
+  background-color: rgba(170, 169, 169, 0.486);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 100px;
+  width: 60%;
+  /*header logo+ recherche */
+  /* section tag quand la musique commence*/
+  /* liste de chansson dans le main*/
+}
+
+main.lecteur header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: rgba(224, 205, 226, 0.76);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-radius: 400px;
+}
+
+main.lecteur header .logo img {
+  width: 150px;
+  height: 100px;
+}
+
+main.lecteur header input[type='search'] {
+  font-size: 16px;
+  background-color: #dbdada;
+  border-color: white;
+  border-radius: 50px;
+  width: 200px;
+  height: 40px;
+  margin-top: 30px;
+}
+
+main.lecteur .tag_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main.lecteur .tag_section .container_tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main.lecteur .tag_section .container_tag .tag {
+  padding: 20px;
+  background-color: rgba(243, 242, 242, 0.726);
+  border-radius: 50px;
+}
+
+main.lecteur .tag_section .container_tag .tag:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  background-image: url(../images/nuage-1.jpg);
+  background-position: top right;
+  background-size: cover;
+}
+
+main.lecteur .tag_section .container_tag .active {
+  background-image: url(../images/nuage-1.jpg);
+  background-position: top right;
+  background-size: cover;
+}
+
+main.lecteur .liste {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 50px;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+main.lecteur .liste .chansons {
+  position: relative;
+  width: 200px;
+  margin: 20px;
+}
+
+main.lecteur .liste .chansons .titre, main.lecteur .liste .chansons .artiste {
+  text-align: center;
+}
+
+main.lecteur .liste .chansons img {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center center;
+     object-position: center center;
+  border-radius: 200px;
+  -webkit-box-shadow: 20px 5px 20px white;
+          box-shadow: 20px 5px 20px white;
+  cursor: pointer;
+}
+
+main.lecteur .liste .chansons img:hover {
+  opacity: 0.8;
+  height: 200px;
+  width: 200px;
+  -webkit-animation: rotate 2s linear;
+          animation: rotate 2s linear;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+main.lecteur footer {
+  width: 100%;
+  background-color: rgba(224, 205, 226, 0.76);
+  position: -webkit-sticky;
+  position: sticky;
+  font-size: 20px;
+  bottom: 0px;
+  border-radius: 400PX;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main.lecteur footer .evolution {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+}
+
+main.lecteur footer .evolution .btn {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  opacity: 0.8;
+  -webkit-transition: 0.5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
+}
+
+main.lecteur footer .evolution .btn:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+main.lecteur footer .evolution img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 2px solid white;
+  -webkit-box-shadow: 5px 5px 5px white;
+          box-shadow: 5px 5px 5px white;
+  margin-left: 50px;
+}
+
+main.lecteur footer .evolution .image_affiche {
+  -webkit-animation: rotate 4s linear infinite;
+          animation: rotate 4s linear infinite;
+  position: absolute;
+  top: 10px;
+  left: 2px;
+}
+
+main.lecteur footer .evolution .temps {
+  position: absolute;
+  top: 35px;
+  left: 200px;
+}
+
+main.lecteur footer .evolution .temps_actuel {
+  position: absolute;
+  top: 15px;
+  left: 170px;
+}
+
+main.lecteur footer .evolution .titre_play {
+  position: absolute;
+  top: 0px;
+  left: 280px;
+  background-color: rgba(250, 250, 250, 0.712);
+  border-radius: 30px;
+  padding: 5px;
+}
+
+main.lecteur footer .evolution #controle_volume {
+  position: absolute;
+  top: 60px;
+  left: 75%;
+  width: 10%;
+}
+
+main.lecteur footer .evolution #volume1 {
+  position: absolute;
+  top: 30px;
+  left: 75%;
+}
+
+main.lecteur footer .evolution #progression {
+  position: absolute;
+  top: 60px;
+  left: 240px;
+  width: 200px;
+}
+/*# sourceMappingURL=styles.css.map */
